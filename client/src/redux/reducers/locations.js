@@ -94,6 +94,12 @@ const locations = (state = initalState, action) => {
       return {
         ...state,
         loading: false,
+        focusedLocation: {
+          name: '',
+          cordinate: { lat: '', lng: '' },
+          address: '',
+          category: '',
+        },
         locations: locations,
       };
     case EDIT_LOCATION:
