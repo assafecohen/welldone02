@@ -1,0 +1,7 @@
+.filtersContainer {
+  margin-top: 10px;
+  display: flex;
+}
+.filterChild {
+  margin: 0 5px;
+}
