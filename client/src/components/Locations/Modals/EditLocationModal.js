@@ -11,10 +11,12 @@ const EditLocationModal = (props) => {
   const [nameInput, setNameInput] = useState('');
   const [addressInput, setAddressInput] = useState('');
   const [cordsInput, setCordeInput] = useState({ lat: '', lng: '' });
-  const [categoryInput, setCategoryInput] = useState('');
+  const [categoryInput, setCategoryInput] = useState([]);
   const [loading, setLoading] = useState(false);
   const { name, address, cordinate, category, _id } = focusedLocation;
   const dispatch = useDispatch();
+
+
   const submitLocation = (e) => {
     e.preventDefault();
     const locationData = {

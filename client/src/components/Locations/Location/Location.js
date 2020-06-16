@@ -8,7 +8,6 @@ import { LocationCard } from '../../../styles/styledComponents/Locations/Locatio
 
 const Location = ({ address, category, cordinate, name, _id }) => {
   const dispatch = useDispatch();
-
   const focusedLocation = useSelector(
     (state) => state.locations.focusedLocation
   );
@@ -33,7 +32,10 @@ const Location = ({ address, category, cordinate, name, _id }) => {
           </Button>
         </Card.Body>
         <Card.Footer>
-          <strong>Category</strong> -{category}
+          <strong>Category</strong> -
+          {category.map((item, index) => {
+            return <span key={index}>{item.value} </span>;
+          })}
         </Card.Footer>
       </LocationCard>
     </Col>

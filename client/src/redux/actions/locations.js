@@ -155,7 +155,7 @@ export const sortLocationCategory = () => ({
 });
 export const filterByCategory = (category) => ({
   type: FILTER_BY_CATEGORY,
-  payload: category,
+  payload: { value: category, label: category },
 });
 export const clearAllFilters = () => ({
   type: CLEAR_ALL_FILTERS,

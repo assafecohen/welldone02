@@ -11,7 +11,7 @@ const AddLocationModal = ({ modalStatus, setModalStatus, categories }) => {
   const [nameInput, setNameInput] = useState('');
   const [addressInput, setAddressInput] = useState('');
   const [cordsInput, setCordeInput] = useState({ lat: '', lng: '' });
-  const [categoryInput, setCategoryInput] = useState('');
+  const [categoryInput, setCategoryInput] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();

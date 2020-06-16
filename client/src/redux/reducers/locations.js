@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   ADD_CATEGORY,
   DELETE_CATEGORY,
@@ -28,7 +29,7 @@ const initalState = {
     name: '',
     cordinate: { lat: '', lng: '' },
     address: '',
-    category: '',
+    category: [],
   },
 };
 
@@ -99,7 +100,7 @@ const locations = (state = initalState, action) => {
           name: '',
           cordinate: { lat: '', lng: '' },
           address: '',
-          category: '',
+          category: [],
         },
         locations: locations,
       };
@@ -111,7 +112,7 @@ const locations = (state = initalState, action) => {
           name: '',
           cordinate: { lat: '', lng: '' },
           address: '',
-          category: '',
+          category: [],
         },
         locations: state.locations.map((location) => {
           if (action.payload._id === location._id) {
@@ -133,11 +134,14 @@ const locations = (state = initalState, action) => {
         locations: alphabeticallySorted,
       };
     case SORT_LOCATION_CATEGORY:
+      //Sorting by category when the first category will checking
       let categorySorted = [...state.originalLocation];
       categorySorted = categorySorted.sort(function (a, b) {
-        let categoryA = a.category.toUpperCase();
-        let categoryB = b.category.toUpperCase();
-        return categoryA < categoryB ? -1 : categoryA > categoryB ? 1 : 0;
+        return a.category[0].value < b.category[0].value
+          ? -1
+          : a.category[0].value > b.category[0].value
+          ? 1
+          : 0;
       });
       return {
         ...state,
@@ -147,7 +151,7 @@ const locations = (state = initalState, action) => {
     case FILTER_BY_CATEGORY:
       let categoryFiltered = [...state.originalLocation];
       categoryFiltered = categoryFiltered.filter(function (location) {
-        return action.payload === location.category;
+        return _.some(location.category, action.payload);
       });
       return {
         ...state,

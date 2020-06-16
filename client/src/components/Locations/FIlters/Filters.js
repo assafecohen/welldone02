@@ -6,7 +6,6 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import './Filters.css';
 const Filters = ({ categories }) => {
   const filtered = useSelector((state) => state.locations.filtered);
-
   const dispatch = useDispatch();
   return (
     <div className='filtersContainer'>

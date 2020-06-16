@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 const GoogleMap = (props) => {
   const { name, cordinate, address } = props.marker;

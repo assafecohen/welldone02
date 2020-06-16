@@ -1,25 +1,18 @@
 import React from 'react';
-import Select from 'react-select';
+import MultiSelect from 'react-multi-select-component';
 
-const SelectCategory = ({
-  categories = [],
-  setCategoryInput,
-  categoryInput,
-}) => {
+const SelectCategory = ({ categories, setCategoryInput, categoryInput }) => {
   const categoriesOptions = categories.map((category) => ({
     value: category.name,
     label: category.name,
   }));
   return (
     <div>
-      <Select
-        value={categoriesOptions.filter(
-          (option) => option.label === categoryInput
-        )}
-        className='basic-single'
-        classNamePrefix='select'
+      <MultiSelect
         options={categoriesOptions}
-        onChange={(value) => setCategoryInput(value.value)}
+        value={categoryInput}
+        onChange={(value) => setCategoryInput(value)}
+        labelledBy={'Select'}
       />
     </div>
   );
