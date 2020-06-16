@@ -56,6 +56,7 @@ const locations = (state = initalState, action) => {
       return {
         ...state,
         loading: false,
+        focusedCategory: '',
         categories: [...state.categories, action.payload],
       };
     case DELETE_CATEGORY:
@@ -71,7 +72,7 @@ const locations = (state = initalState, action) => {
       return {
         ...state,
         loading: false,
-        focusedCategory: action.payload,
+        focusedCategory: '',
         categories: state.categories.map((category) => {
           if (action.payload._id === category._id) {
             category.name = action.payload.name;
@@ -106,7 +107,12 @@ const locations = (state = initalState, action) => {
       return {
         ...state,
         loading: false,
-        focusedLocation: action.payload,
+        focusedLocation: {
+          name: '',
+          cordinate: { lat: '', lng: '' },
+          address: '',
+          category: '',
+        },
         locations: state.locations.map((location) => {
           if (action.payload._id === location._id) {
             location = action.payload;
