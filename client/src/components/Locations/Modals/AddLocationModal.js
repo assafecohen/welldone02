@@ -37,7 +37,7 @@ const AddLocationModal = ({ modalStatus, setModalStatus, categories }) => {
               required
               onChange={(event) => setNameInput(event.target.value)}
               value={nameInput}
-              placeholder='Enter Location...'
+              placeholder='Enter Location Name...'
               className={setInputStyle(categoryInput)}
             />
           </div>
@@ -55,7 +55,7 @@ const AddLocationModal = ({ modalStatus, setModalStatus, categories }) => {
               required
               onChange={(event) => setAddressInput(event.target.value)}
               value={addressInput}
-              placeholder='Enter Location...'
+              placeholder='Enter Location Address...'
               className={setInputStyle(categoryInput)}
             />
           </div>
@@ -69,7 +69,7 @@ const AddLocationModal = ({ modalStatus, setModalStatus, categories }) => {
                   setCordeInput({ ...cordsInput, lat: event.target.value })
                 }
                 value={cordsInput.lat}
-                placeholder='Enter Location...'
+                placeholder='Latitude...'
                 className={setInputStyle(categoryInput)}
               />
               <input
@@ -80,7 +80,7 @@ const AddLocationModal = ({ modalStatus, setModalStatus, categories }) => {
                   setCordeInput({ ...cordsInput, lng: event.target.value })
                 }
                 value={cordsInput.lng}
-                placeholder='Enter Location...'
+                placeholder='Longitude...'
                 className={setInputStyle(categoryInput)}
               />
             </CordsContainer>

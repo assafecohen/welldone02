@@ -45,7 +45,7 @@ const EditLocationModal = (props) => {
               required
               onChange={(event) => setNameInput(event.target.value)}
               value={nameInput}
-              placeholder='Enter Location...'
+              placeholder='Enter Location Name...'
               className='form-control'
             />
           </div>
@@ -63,7 +63,7 @@ const EditLocationModal = (props) => {
               required
               onChange={(event) => setAddressInput(event.target.value)}
               value={addressInput}
-              placeholder='Enter Location...'
+              placeholder='Enter Location Address...'
               className='form-control'
             />
           </div>
@@ -77,7 +77,7 @@ const EditLocationModal = (props) => {
                   setCordeInput({ ...cordsInput, lat: event.target.value })
                 }
                 value={cordsInput.lat}
-                placeholder='Enter Location...'
+                placeholder='Latitude...'
                 className='form-control'
               />
               <input
@@ -88,7 +88,7 @@ const EditLocationModal = (props) => {
                   setCordeInput({ ...cordsInput, lng: event.target.value })
                 }
                 value={cordsInput.lng}
-                placeholder='Enter Location...'
+                placeholder='Longitude...'
                 className='form-control'
               />
             </CordsContainer>
