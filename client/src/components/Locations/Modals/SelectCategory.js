@@ -10,7 +10,6 @@ const SelectCategory = ({
     value: category.name,
     label: category.name,
   }));
-  console.log(categoryInput);
   return (
     <div>
       <Select

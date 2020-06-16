@@ -133,7 +133,6 @@ export const deleteLocation = (_id, setModalStatus) => {
   };
 };
 export const editLocation = (locationData, setLoading, setModalStatus) => {
-  console.log(locationData, 'locationData');
   return (dispatch) => {
     dispatch(startApiCall(START_API_CALL));
     instance
@@ -160,5 +159,4 @@ export const filterByCategory = (category) => ({
 });
 export const clearAllFilters = () => ({
   type: CLEAR_ALL_FILTERS,
-
 });

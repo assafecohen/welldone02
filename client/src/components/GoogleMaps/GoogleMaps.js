@@ -4,9 +4,7 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 const GoogleMap = (props) => {
   const { name, cordinate, address } = props.marker;
 
-  function handleClick(event) {
-    console.log(event);
-  }
+
   return (
     <Map
       google={props.google}
@@ -20,11 +18,7 @@ const GoogleMap = (props) => {
           lng: cordinate.lng || -74.006,
         }}
       />
-      <InfoWindow onClick={(e) => handleClick(e)}>
-        <div>
-          <h1>TITLE</h1>
-        </div>
-      </InfoWindow>
+
     </Map>
   );
 };
