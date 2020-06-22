@@ -27,7 +27,7 @@ const LocationsPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.initialGetLocations());
-    //pulling categories data in case someone enter direct to /locations
+    //pulling categories data in case someone enter direct to /locations111
     dispatch(actions.initialGetCategories());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
